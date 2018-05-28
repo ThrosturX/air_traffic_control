@@ -1,4 +1,6 @@
 #include <cstdlib>
+#include <iostream>
+#include <thread>
 #include <vector>
 
 #include "airplane.h"
@@ -6,7 +8,12 @@
 
 // TODO: Extract or refactor // TODO: Is controller a required parameter here?
 void SimulateLandingScenario(AirTrafficController * controller, std::vector<Airplane> planes) {
+	V3 zeroV = V3(0,0,0);
+	for (auto it = planes.begin(); it < planes.end(); ++it) {
+		bool compliance = it->Land(zeroV);
 
+		std::cout << *it << ". Compliance: " << compliance << std::endl;
+	}
 }
 
 // create simulation here, then extract
@@ -26,7 +33,7 @@ int main(int argc, char * argv []) {
 
 	simulation.join();
 
-	// TODO: Summary or reporting
+	// todo: Summary or reporting
 
     return EXIT_SUCCESS;
 }

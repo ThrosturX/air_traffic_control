@@ -4,6 +4,6 @@ set shiftwidth=4
 set noexpandtab
 set colorcolumn=110
 highlight ColorColumn ctermbg=darkgray
-set makeprg=g++\ -g\ %\ -o\ app.out
-nnoremap <F11> :w<CR>:!rm app.out<CR>:make<CR>:!gdb app.out<CR>
-nnoremap <F12> :w<CR>:!rm app.out<CR>:make<CR>:!./app.out<CR>
+set makeprg=make "g++\ -lpthread\ -g\ %\ -o\ app.out
+nnoremap <F11> :w<CR>:!rm bin/atc<CR>:make<CR>:!gdb bin/atc<CR>
+nnoremap <F12> :w<CR>:!rm bin/atc<CR>:make<CR>:!./bin/atc<CR>

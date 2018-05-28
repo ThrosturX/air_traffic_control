@@ -1,19 +1,22 @@
 #pragma once
-
-struct V3 {
-    double x,
-        y,
-        z;
-
-	V3(double xx, double yy, double zz) : x(xx), y(yy), z(zz) {}
-};
+#include <ostream>
+#include "vector3.h"
 
 class Airplane {
+	private:
+	static unsigned int current_id;
+	unsigned int uniqueId;
     V3 position;
     V3 velocity;
 
 	public:
-        Airplane(double x, double y, double z) : position(x, y, z), velocity(0, 0, 0) {} ;
+        Airplane(double x, double y, double z) : 
+			uniqueId(current_id++),
+			position(x, y, z), 
+			velocity(0, 0, 0)
+			{} ;
+
+		// TODO: Do I need a copy constructor? What about assignment operator?
 
 		// Requests that this airplane begins landing procedure
 		// Returns whether or not the airplane can comply with the request
@@ -26,5 +29,11 @@ class Airplane {
 		// Precondition: The airplane is on a runway
 		// Postcondition: The runway is no longer occupied by this airplane (side-effect of position)
 		bool TakeOff(V3 direction);
+
+		// Prototypes, TODO: Descriptions
+		bool TaxiOn (V3 direction);
+		bool TaxiOff(V3 direction);
+
+		friend std::ostream& operator<<(std::ostream& os, const Airplane& ap);
 };
 
