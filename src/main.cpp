@@ -18,12 +18,12 @@ void SimulateLandingScenario(AirTrafficController * controller, std::vector<Airp
 
 // create simulation here, then extract
 int main(int argc, char * argv []) {
-    AirTrafficController controller; // TODO: Constructor
+	AirTrafficController controller; // TODO: Constructor
 	std::vector<Airplane> planes;
 
-    for (int i = 0 ; i < 4 ; ++i) {
-        planes.push_back(Airplane(0, 0, i * 1000));
-    }
+	for (int i = 0 ; i < 4 ; ++i) {
+		planes.push_back(Airplane(0, 0, i * 1000));
+	}
 
 	// Scenario 1: Run simulation until all planes have landed
 	std::thread simulation (SimulateLandingScenario, &controller, planes);
@@ -35,5 +35,5 @@ int main(int argc, char * argv []) {
 
 	// todo: Summary or reporting
 
-    return EXIT_SUCCESS;
+	return EXIT_SUCCESS;
 }

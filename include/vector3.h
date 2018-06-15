@@ -3,9 +3,9 @@
 #include <ostream>
 
 struct V3 {
-    double x,
-        y,
-        z;
+	double x,
+		y,
+		z;
 
 	V3(double xx, double yy, double zz) : x(xx), y(yy), z(zz) {}
 

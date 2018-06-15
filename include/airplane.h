@@ -6,11 +6,11 @@ class Airplane {
 	private:
 	static unsigned int current_id;
 	unsigned int uniqueId;
-    V3 position;
-    V3 velocity;
+	V3 position;
+	V3 velocity;
 
 	public:
-        Airplane(double x, double y, double z) : 
+		Airplane(double x, double y, double z) : 
 			uniqueId(current_id++),
 			position(x, y, z), 
 			velocity(0, 0, 0)

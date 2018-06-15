@@ -7,14 +7,14 @@ bool Airplane::Land(V3 destination) {
 }
 
 bool Airplane::TakeOff(V3 destination) {
-    // Make sure the plane is not in the air already
-    if (this->position.z != 0) {
-        return false;
-    }
+	// Make sure the plane is not in the air already
+	if (this->position.z != 0) {
+		return false;
+	}
 
-    // Calculate the velocity vector needed, based on current position, to approach destination
+	// Calculate the velocity vector needed, based on current position, to approach destination
 
-    V3 direction = destination - position;
+	V3 direction = destination - position;
 
 	this->velocity = direction;
 
